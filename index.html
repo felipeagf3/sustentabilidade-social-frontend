@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum Sustentabilidade - Feed</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <h1>Sustentabilidade Social</h1>
+        </div>
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Pesquisar no fórum...">
+            <button>Pesquisar</button>
+        </div>
+        <nav class="menu-cabecalho">
+            <a href="#">Meu Perfil</a>
+            <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container-principal">
+        <aside class="barra-lateral-esquerda">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Destaques</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Minhas Publicações</a></li>
+                    </ul>
+            </nav>
+        </aside>
+
+        <main class="conteudo-principal">
+            <section class="area-publicacao">
+                <h2>Crie sua publicação</h2>
+                <textarea placeholder="No que você está pensando?"></textarea>
+                <input type="file" accept=".pdf, video/*"> <button>Publicar</button>
+            </section>
+
+            <section class="feed-posts">
+                <article class="post">
+                    <div class="post-header">
+                        <img src="assets/avatar.png" alt="Avatar do Usuário" class="avatar">
+                        <span class="nome-usuario">Maria Sustentável</span>
+                        <span class="data-post">Há 5 minutos</span>
+                    </div>
+                    <div class="post-content">
+                        <p>Este é um exemplo de publicação de texto sobre dicas de reciclagem doméstica. Pequenas ações fazem grande diferença no dia a dia!</p>
+                    </div>
+                    <div class="post-actions">
+                        <button class="curtir-btn">Curtir</button>
+                        <button class="comentar-btn">Comentar</button>
+                        <button class="compartilhar-btn">Compartilhar</button>
+                    </div>
+                    <div class="post-comments">
+                        <p><strong>João Ambiental:</strong> Ótima dica!</p>
+                        <p><strong>Ana Eco:</strong> Eu uso copo retrátil no trabalho, ajuda muito!</p>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <img src="assets/avatar.png" alt="Avatar do Usuário" class="avatar">
+                        <span class="nome-usuario">Eco Dicas</span>
+                        <span class="data-post">Ontem</span>
+                    </div>
+                    <div class="post-content">
+                        <p>Confira este vídeo inspirador sobre a importância da compostagem em casa! ♻️</p>
+                        <video controls src="https://www.w3schools.com/html/mov_bbb.mp4" style="max-width: 100%;"></video>
+                    </div>
+                    <div class="post-actions">
+                        <button class="curtir-btn">Curtir</button>
+                        <button class="comentar-btn">Comentar</button>
+                        <button class="compartilhar-btn">Compartilhar</button>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <img src="assets/avatar.png" alt="Avatar do Usuário" class="avatar">
+                        <span class="nome-usuario">Artigos Verdes</span>
+                        <span class="data-post">18 de Maio de 2025</span>
+                    </div>
+                    <div class="post-content">
+                        <p>Leitura essencial: um artigo detalhado sobre os avanços das energias renováveis e o futuro do nosso planeta.</p>
+                        <a href="assets/exemplo_artigo.pdf" target="_blank">Baixar Artigo: O Futuro da Energia Sustentável</a>
+                    </div>
+                    <div class="post-actions">
+                        <button class="curtir-btn">Curtir</button>
+                        <button class="comentar-btn">Comentar</button>
+                        <button class="compartilhar-btn">Compartilhar</button>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+    </div>
+
+    </body>
+</html>

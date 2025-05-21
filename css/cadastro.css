@@ -1,0 +1,94 @@
+body{
+    background-color: #2BAE3E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-top: 48px;
+    box-sizing: border-box;
+}
+
+.sustentabilidade-social-header{
+    height: 48px;
+    background-color: #2BAE3E;
+    border-bottom: 1px solid #e0e0e0;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+
+
+}
+
+.cadastro-container{
+    width: 400px;
+    height: 400px;
+    background-color: #F3F0F0;
+    border-radius: 12px;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 110px;
+}
+
+.cadastro-container h2{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cadastro-container label{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cadastro-container input[type="text"],
+.cadastro-container input[type="email"],
+.cadastro-container input[type="password"]{
+    width: 100%;
+    padding: 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.cadastro-container button[type="submit"]{
+    background-color: #007bff;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3 ease;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.cadastro-container button[type="submit"]:hover{
+background-color: #0056b3;
+}
+
+.cadastro-container p{
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 15px; 
+}
+
+.cadastro-container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.cadastro-container p a:hover{
+    text-decoration: underline;
+}
