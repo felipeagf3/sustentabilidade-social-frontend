@@ -256,6 +256,15 @@ background-color:#388e3c;
     gap: 15px; /* Espaçamento entre os posts */
 }
 
+.post-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2e7d32; /* verde sustentável */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
 .post {
     background-color: #ffffff;
     padding: 20px;
