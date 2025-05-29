@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustentabilidade Social - Administrar Usuários</title>
+    <link rel="stylesheet" href="css/admin.css"> <link rel="stylesheet" href="css/style.css"> </head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <h1>Sustentabilidade Social</h1>
+        </div>
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Pesquisar no fórum...">
+            <button>Pesquisar</button>
+        </div>
+        <nav class="menu-cabecalho">
+            <a href="perfil-usuario.html">Meu Perfil</a>
+            <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container-principal">
+        <aside class="barra-lateral-esquerda">
+            <nav>
+                <ul>
+                    <li><a href="feed.html">Home</a></li>
+                    <li><a href="#">Destaques</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Minhas Publicações</a></li>
+                    <li class="separator">--- Admin ---</li>
+                    <li><a href="admin-posts.html">Administrar Posts</a></li>
+                    <li><a href="admin-users.html" class="active">Administrar Usuários</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="conteudo-principal">
+            <section class="admin-section">
+                <h2>Gerenciar Usuários</h2>
+                <button class="btn-adicionar-novo">Adicionar Novo Usuário</button>
+
+                <div class="tabela-responsiva">
+                    <table class="tabela-admin">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome de Usuário</th>
+                                <th>E-mail</th>
+                                <th>Data de Cadastro</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>101</td>
+                                <td>Maria Sustentável</td>
+                                <td>maria.sustentavel@email.com</td>
+                                <td>01/01/2024</td>
+                                <td>
+                                    <button class="btn-acao btn-editar">Editar</button>
+                                    <button class="btn-acao btn-excluir">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>102</td>
+                                <td>Eco Dicas</td>
+                                <td>ecodicas@email.com</td>
+                                <td>15/02/2024</td>
+                                <td>
+                                    <button class="btn-acao btn-editar">Editar</button>
+                                    <button class="btn-acao btn-excluir">Excluir</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

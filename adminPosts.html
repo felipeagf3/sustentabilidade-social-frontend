@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustentabilidade Social - Administrar Posts</title>
+    <link rel="stylesheet" href="css/admin.css"> <link rel="stylesheet" href="css/style.css"> </head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <h1>Sustentabilidade Social</h1>
+        </div>
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Pesquisar no fórum...">
+            <button>Pesquisar</button>
+        </div>
+        <nav class="menu-cabecalho">
+            <a href="perfil-usuario.html">Meu Perfil</a>
+            <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <div class="container-principal">
+        <aside class="barra-lateral-esquerda">
+            <nav>
+                <ul>
+                    <li><a href="feed.html">Home</a></li>
+                    <li><a href="#">Destaques</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Minhas Publicações</a></li>
+                    <li class="separator">--- Admin ---</li> <li><a href="admin-posts.html" class="active">Administrar Posts</a></li>
+                    <li><a href="admin-users.html">Administrar Usuários</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="conteudo-principal">
+            <section class="admin-section">
+                <h2>Gerenciar Publicações</h2>
+                <button class="btn-adicionar-novo">Adicionar Nova Publicação</button>
+
+                <div class="tabela-responsiva">
+                    <table class="tabela-admin">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Conteúdo (Início)</th>
+                                <th>Autor</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Este é um exemplo de publicação de texto sobre dicas de reciclagem...</td>
+                                <td>Maria Sustentável</td>
+                                <td>29/05/2025</td>
+                                <td>
+                                    <button class="btn-acao btn-editar">Editar</button>
+                                    <button class="btn-acao btn-excluir">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Confira este vídeo inspirador sobre a importância da compostagem...</td>
+                                <td>Eco Dicas</td>
+                                <td>28/05/2025</td>
+                                <td>
+                                    <button class="btn-acao btn-editar">Editar</button>
+                                    <button class="btn-acao btn-excluir">Excluir</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

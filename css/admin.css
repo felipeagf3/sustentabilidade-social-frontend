@@ -1,0 +1,147 @@
+/*
+ * admin.css
+ * Estilos específicos para as páginas de administração (posts e usuários).
+ * Este arquivo deve ser importado APÓS o style.css, para sobrepor/complementar.
+ */
+
+/* Adiciona um separador na barra lateral para links de admin */
+.barra-lateral-esquerda li.separator {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilo para as seções de administração */
+.admin-section {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.admin-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Botão para adicionar novo item (post/usuário) */
+.btn-adicionar-novo {
+    background-color: #28a745; /* Verde de sucesso */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Espaço abaixo do botão */
+    display: inline-block; /* Para o padding funcionar melhor */
+}
+
+.btn-adicionar-novo:hover {
+    background-color: #218838;
+}
+
+/* Tabela de administração */
+.tabela-responsiva {
+    overflow-x: auto; /* Garante scroll horizontal em telas pequenas */
+}
+
+.tabela-admin {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaçamento entre as bordas das células */
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.tabela-admin th,
+.tabela-admin td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tabela-admin th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabela-admin tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping para melhor legibilidade */
+}
+
+.tabela-admin tbody tr:hover {
+    background-color: #e9e9e9;
+}
+
+/* Botões de ação dentro da tabela */
+.btn-acao {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    margin-right: 5px; /* Espaço entre os botões */
+}
+
+.btn-acao:last-child {
+    margin-right: 0;
+}
+
+.btn-editar {
+    background-color: #007bff; /* Azul padrão */
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #0056b3;
+}
+
+.btn-excluir {
+    background-color: #dc3545; /* Vermelho de perigo */
+    color: white;
+}
+
+.btn-excluir:hover {
+    background-color: #c82333;
+}
+
+/* Responsividade básica para as tabelas */
+@media (max-width: 768px) {
+    .tabela-admin th,
+    .tabela-admin td {
+        padding: 8px 10px;
+    }
+
+    .tabela-admin th:nth-child(3), /* Oculta a coluna de Autor/Email em telas menores */
+    .tabela-admin td:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho .barra-pesquisa {
+        display: none; /* Oculta a barra de pesquisa em telas muito pequenas */
+    }
+    .barra-lateral-esquerda {
+        flex: 0 0 100%; /* Barra lateral ocupa toda a largura */
+        margin-bottom: 20px;
+    }
+    .container-principal {
+        flex-direction: column; /* Conteúdo principal abaixo da barra lateral */
+    }
+}
