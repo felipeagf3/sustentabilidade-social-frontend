@@ -107,6 +107,19 @@ background-color:#388e3c;
 .login-container p a:hover{
     text-decoration: underline;
 }
+
+/*início dos estilos de erro de login*/
+
+.erro-mensagem {
+    color: #dc3545; /* Cor vermelha para indicar erro */
+    font-size: 0.8em; /* Tamanho da fonte um pouco menor */
+    margin-top: 5px; /* Espaço acima da mensagem */
+    display: block; /* Garante que a mensagem fique em sua própria linha */
+}
+
+input.invalido{
+     border: 1px solid #dc3545 !important; /* Borda vermelha para campos com erro */
+}
 /*fim dos estilos tela de login*/
 
 /*cabeçalho da tela de feed*/
