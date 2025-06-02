@@ -350,3 +350,40 @@ background-color:#388e3c;
 .post-comments strong {
     color: #333;
 }
+
+/* Estilos para a área de adicionar comentário */
+.add-comment-area {
+    display: flex; /* Para alinhar o input e o botão lado a lado */
+    gap: 10px; /* Espaçamento entre o input e o botão */
+    margin-top: 15px; /* Espaço acima da área de comentário */
+    padding-top: 15px; /* Espaçamento interno superior */
+    border-top: 1px solid #eee; /* Linha divisória fina */
+}
+
+.comment-input {
+    flex-grow: 1; /* Faz o input ocupar o máximo de espaço possível */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 20px; /* Bordas arredondadas */
+    font-size: 0.9em; /* Tamanho da fonte um pouco menor */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.comment-input::placeholder { /* Estilo para o texto do placeholder */
+    color: #999;
+}
+
+.send-comment-btn {
+    background-color: #2e7d32; /* Cor verde mais escura para o botão */
+    color: white; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 20px; /* Bordas arredondadas */
+    cursor: pointer; /* Indica que é clicável */
+    font-size: 0.9em; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.send-comment-btn:hover {
+    background-color: #1b5e20; /* Escurece a cor ao passar o mouse */
+}
