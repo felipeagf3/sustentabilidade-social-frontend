@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('http://localhost:3000/posts') // substitua pela URL da sua API
     .then(res => res.json())
     .then(posts => {
-      const container = document.getElementById('posts-container');
+      const container = document.getElementById('feed-posts');
       container.innerHTML = ''; // limpa antes de inserir
 
       posts.forEach(post => {
@@ -57,9 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!alreadyLiked) {
               // Curtir (POST)
               const res = await fetch(`http://localhost:3000/${postId}/post/like`, {
-                method: 'POST'
+                method: 'POST',
+                credentials: "include"
               });
-              if (!res.ok) throw new Error('Erro ao curtir');
+              if (!res.ok) throw new Error('Erro ao curtir', await res.json().message);
 
               likes += 1;
               btn.innerText = `Descurtir (${likes})`;
@@ -67,7 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
               // Remover curtida (DELETE)
               const res = await fetch(`http://localhost:3000/${postId}/post/removelike`, {
-                method: 'POST'
+                method: 'PUT',
+                credentials: "include"
               });
               if (!res.ok) throw new Error('Erro ao remover like');
 
