@@ -9,12 +9,12 @@ Este documento descreve a implementação da validação de formulário do módu
 ## Elementos HTML Envolvidos
 O formulário de login (#LoginForm) contém os seguintes elementos críticos para a validação:
 
-* <form id="LoginForm">
-* <input type="email" id="email" name="email">
-* emailErro (span para mensagem de erro específica do e-mail)
-* <input type="password" id="senha" name="senha">
-* senhaErro (span para mensagem de erro específica da senha)
-* <p class="erro-mensagem" id="mensagemGeralErro"> (parágrafo para mensagem de erro geral do formulário)
+* **Formulário:** `<form id="LoginForm">`
+* **Campo de E-mail:** `<input type="email" id="email" name="email">`
+    * `emailErro` (`<span>` para mensagem de erro específica do e-mail)
+* **Campo de Senha:** `<input type="password" id="senha" name="senha">`
+    * `senhaErro` (`<span>` para mensagem de erro específica da senha)
+* **Mensagem de Erro Geral:** `<p class="erro-mensagem" id="mensagemGeralErro">` (parágrafo para mensagem de erro geral do formulário)
 ## Fluxo de Validação
 1. Carregamento da Página: O script login-validation.js é executado após o carregamento completo do DOM (DOMContentLoaded event listener).
 2. Captura de Elementos: Referências aos campos de input, spans de erro e o formulário são obtidas através de seus IDs.
