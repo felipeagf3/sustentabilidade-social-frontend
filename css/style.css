@@ -359,3 +359,120 @@ background-color:#388e3c;
 .post-comments strong {
     color: #333;
 }
+/*inicio dos estilos da página de perfil*/
+.container-principal-perfil {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px; /* Mesma largura do seu container-principal */
+    margin: 20px auto;
+    gap: 20px; /* Espaçamento entre a barra lateral e o conteúdo do perfil */
+    padding-top: 80px; /* Ajusta para compensar o cabeçalho fixo */
+}
+
+.conteudo-principal-perfil {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px; /* Padding interno para o conteúdo principal do perfil */
+}
+
+/* Seção de informações do perfil (avatar, nome, etc.) */
+.secao-info-perfil {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Linha divisória */
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px; /* Espaçamento entre avatar e info */
+}
+
+.avatar-perfil {
+    width: 100px; /* Tamanho maior para o avatar do perfil */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4CAF50; /* Borda verde */
+    margin-bottom: 10px;
+}
+
+.btn-mudar-foto {
+    background-color: #2e7d32; /* Verde mais escuro */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-mudar-foto:hover {
+    background-color: #1b5e20;
+}
+
+.info-usuario {
+    text-align: left;
+}
+
+.nome-usuario-perfil {
+    margin: 0 0 5px 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.karma-perfil, .data-cadastro {
+    margin: 0 0 5px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Menu de navegação do perfil (Visão Geral, Posts, etc.) */
+.menu-perfil {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.menu-perfil ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para alinhar os itens horizontalmente */
+}
+
+.menu-perfil li {
+    margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+.menu-perfil a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 2px solid transparent; /* Para o hover/active */
+}
+
+.menu-perfil a:hover {
+    color: #4CAF50;
+}
+
+.menu-perfil a.active {
+    color: #4CAF50;
+    border-bottom-color: #4CAF50;
+}
+
+/* Conteúdo dinâmico do perfil (onde os posts aparecerão) */
+.conteudo-dinamico-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os posts/itens da visão geral */
+}
+/*fim dos estilos da página de perfil*/
