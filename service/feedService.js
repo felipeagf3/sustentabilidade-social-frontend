@@ -100,3 +100,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnPublicar = document.getElementById('btn-publicar');
+
+    btnPublicar.addEventListener('click', async () => {
+        const title = document.getElementById('titulo').value;
+        const content = document.getElementById('conteudo').value;
+        const fileInput = document.getElementById('arquivo');
+        const file = fileInput.files[0];
+
+        if (!content) {
+            alert("A publicação não pode estar vazia.");
+            return;
+        }
+
+        // Simulação: recupere o userId de um local seguro (ex: sessionStorage, cookie ou contexto da app)
+        const userId = localStorage.getItem('userId'); // ajuste conforme seu app
+
+        if (!userId) {
+            alert("Usuário não autenticado.");
+            return;
+        }
+
+        const dateTime = new Date().toISOString(); // formato ISO padrão
+
+        // Usando FormData para permitir envio de arquivo
+        const formData = new FormData();
+        formData.append("title", title); // ou permitir título separado se necessário
+        formData.append("content", content);
+        formData.append("userId", userId);
+        formData.append("dateTime", dateTime);
+        if (file) {
+            formData.append("file", file);
+        }
+
+        try {
+            const response = await fetch("http://localhost:3000/posts", {
+                method: "POST",
+                credentials: "include",
+                body: formData
+            });
+
+            if (response.ok) {
+                alert("Publicação enviada com sucesso!");
+                // limpar campos
+                document.getElementById('conteudo').value = '';
+                fileInput.value = '';
+            } else {
+                const err = await response.json();
+                alert(`Erro ao publicar: ${err.message || response.statusText}`);
+            }
+        } catch (error) {
+            console.error("Erro de rede:", error);
+            alert("Erro ao conectar com o servidor.");
+        }
+    });
+});

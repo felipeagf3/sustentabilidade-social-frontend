@@ -15,6 +15,8 @@ try {
     body: JSON.stringify({ email, password }),
     });
 
+    console.log(password)
+
     if (response.ok) {
     // Login deu certo → redireciona para o feed
     window.location.href = "/index.html";
