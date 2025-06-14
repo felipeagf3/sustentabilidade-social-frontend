@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   fetch('http://localhost:3000/posts') // substitua pela URL da sua API
     .then(res => res.json())
@@ -115,21 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Simulação: recupere o userId de um local seguro (ex: sessionStorage, cookie ou contexto da app)
-        const userId = localStorage.getItem('userId'); // ajuste conforme seu app
-
-        if (!userId) {
-            alert("Usuário não autenticado.");
-            return;
-        }
-
         const dateTime = new Date().toISOString(); // formato ISO padrão
 
         // Usando FormData para permitir envio de arquivo
         const formData = new FormData();
         formData.append("title", title); // ou permitir título separado se necessário
         formData.append("content", content);
-        formData.append("userId", userId);
         formData.append("dateTime", dateTime);
         if (file) {
             formData.append("file", file);
@@ -146,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Publicação enviada com sucesso!");
                 // limpar campos
                 document.getElementById('conteudo').value = '';
+                document.getElementById('titulo').value = '';
                 fileInput.value = '';
             } else {
                 const err = await response.json();
