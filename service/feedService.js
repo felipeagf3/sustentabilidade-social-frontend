@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
           likedStatus = 'false';
         }
 
+        console.log(post.picture_profile_url)
+
         article.innerHTML = `
           <h3 class="post-title">${post.title}</h3>
           <div class="post-header">
-            <img src="assets/avatar.png" alt="Avatar do Usuário" class="avatar">
+            <img src="${post.picture_profile_url}" alt="Avatar do Usuário" class="avatar">
             <span class="nome-usuario" data-slug="${post.slug}">${post.username}</span>
             <span class="data-post">${formatarData(post.dateTime)}</span>
           </div>

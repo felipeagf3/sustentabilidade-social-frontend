@@ -22,9 +22,8 @@ body{
 
 }
 
-.cadastro-container{
+.cadastro-container {
     width: 400px;
-    height: 400px;
     background-color: #F3F0F0;
     border-radius: 12px;
     font-family: sans-serif;
@@ -36,6 +35,7 @@ body{
     align-items: center;
     gap: 15px;
     margin-top: 110px;
+    padding: 24px;
 }
 
 .cadastro-container h2{
@@ -91,4 +91,24 @@ background-color: #0056b3;
 
 .cadastro-container p a:hover{
     text-decoration: underline;
+}
+
+.foto-perfil-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.foto-perfil-preview img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.foto-perfil-preview img:hover {
+  border-color: #007bff;
 }
