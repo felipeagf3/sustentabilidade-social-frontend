@@ -28,9 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
           likedText = 'Curtir';
           likedStatus = 'false';
         }
+//inicio da verificação da foto de perfil
+        let urlImageProfile = "/assets/icons/user-avatar-default.png"; // <-- MUDE ESTE CAMINHO
+
+        if (post.picture_profile_url !== null && post.picture_profile_url !== undefined && post.picture_profile_url !== '') {
+          urlImageProfile = post.picture_profile_url;
+        }
 
         console.log(post.picture_profile_url)
-
+//fim da verificação da foto de perfil
         article.innerHTML = `
           <h3 class="post-title">${post.title}</h3>
           <div class="post-header">
