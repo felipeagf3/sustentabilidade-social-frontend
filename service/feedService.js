@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //inicio da verificação da foto de perfil
         let urlImageProfile = "/assets/icons/user-avatar-default.png"; // <-- MUDE ESTE CAMINHO
 
-        if (post.picture_profile_url !== null && post.picture_profile_url !== undefined && post.picture_profile_url !== '') {
+        if (post.picture_profile_url !== null && post.picture_profile_url !== undefined) {
           urlImageProfile = post.picture_profile_url;
         }
 
