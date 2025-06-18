@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('feed-posts');
       container.innerHTML = ''; // limpa antes de inserir
 
-      posts.forEach(post => {
+      for(let index = posts.length - 1; index >= 0; index --) {
+        let post = posts[index]
         const article = document.createElement('article');
         article.classList.add('post');
         const button = null;
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         container.appendChild(article);
-      });
+      }
 
       // Evento de clique no nome do usuário
       document.querySelectorAll('.nome-usuario').forEach(el => {
