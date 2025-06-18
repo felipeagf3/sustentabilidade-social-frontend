@@ -14,22 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
         article.classList.add('post');
         const button = null;
 
-        console.log(post);
+        console.log(post.liked);
 
         let likedText = 'Curtir';
-        let likedStatus = 'false';
+        let likedStatus = 'like';
         let likedStyle = ''; // opcional, para mudar cor
 
         if (post.liked === 'like') {
           likedText = 'Descurtir';
-          likedStatus = 'true';
+          likedStatus = 'like';
           likedStyle = 'style="color: gray;"';
         } else {
           likedText = 'Curtir';
-          likedStatus = 'false';
+          likedStatus = 'unlike';
         }
 //inicio da verificação da foto de perfil
-        let urlImageProfile = "/assets/icons/user-avatar-default.png"; // <-- MUDE ESTE CAMINHO
+        let urlImageProfile = "../assets/icons/user-avatar-default.png"; // <-- MUDE ESTE CAMINHO
 
         if (post.picture_profile_url !== null && post.picture_profile_url !== undefined) {
           urlImageProfile = post.picture_profile_url;
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         article.innerHTML = `
           <h3 class="post-title">${post.title}</h3>
           <div class="post-header">
-            <img src="${post.picture_profile_url}" alt="Avatar do Usuário" class="avatar">
+            <img src="${urlImageProfile}" alt="Avatar do Usuário" class="avatar">
             <span class="nome-usuario" data-slug="${post.slug}">${post.username}</span>
             <span class="data-post">${formatarData(post.dateTime)}</span>
           </div>
@@ -76,23 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', async (e) => {
         const btn = e.currentTarget;
         const postId = btn.getAttribute('data-id');
-        const alreadyLiked = btn.dataset.liked === 'true';
+        const alreadyLiked = btn.getAttribute("data-liked");
 
         try {
           let likes = parseInt(btn.innerText.match(/\d+/)[0]);
 
-          if (!alreadyLiked) {
+          if (alreadyLiked === "unlike" || alreadyLiked !== undefined && alreadyLiked !== "") {
             // CURTIR
             const res = await fetch(`http://localhost:3000/${postId}/post/like`, {
               method: 'POST',
               credentials: "include"
             });
 
-            if (!res.ok) throw new Error(await res.text());
+            if (!res.ok) throw new Error(await res.json());
 
             likes += 1;
             btn.innerText = `Descurtir (${likes})`;
-            btn.setAttribute('data-liked', 'true');
+            btn.setAttribute('data-liked', 'like');
             btn.style.color = 'gray';
 
           } else {
@@ -102,11 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
               credentials: "include"
             });
 
-            if (!res.ok) throw new Error(await res.text());
+            if (!res.ok) throw new Error(await res.json());
 
             likes -= 1;
             btn.innerText = `Curtir (${likes})`;
-            btn.setAttribute('data-liked', 'false');
+            btn.setAttribute('data-liked', 'unlike');
             btn.style.color = '';
           }
         } catch (err) {
