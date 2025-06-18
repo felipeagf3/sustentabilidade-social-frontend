@@ -14,6 +14,14 @@ body.cadastro-page {
     align-items: center;
     padding-top: 48px;
     box-sizing: border-box;
+
+    background-image: url('../assets/images/fundo5-cadastro.jpeg'); /* Caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-attachment: fixed; /* Opcional: fixa a imagem de fundo ao rolar */
+    background-color: rgba(240, 242, 245, 0.9);
+    /*background-color: rgba(255, 255, 255, 1.6);*/
 }
 
 .sustentabilidade-social-header{
@@ -49,6 +57,7 @@ body.cadastro-page {
 .cabecalho-cadastro h1 {
     margin: 0;
     font-size: 24px;
+    font-family: Arial, sans-serif
 }
 /*fim dos estilos cabeçalho de cadastro*/
 .cadastro-container {
@@ -140,4 +149,33 @@ background-color: #388e3c;
 
 .foto-perfil-preview img:hover {
   border-color: #007bff;
+}
+
+/* ----------------------------------------- */
+/* Breakpoint: Telas até 768px (para Cadastro) */
+/* ----------------------------------------- */
+@media (max-width: 768px) {
+    /*
+       Ajuste do background-color da página de cadastro.
+       Se a intenção é que essa transparência seja específica,
+       ela deve vir aqui e pode sobrescrever uma regra mais geral do body.
+       Se body.cadastro-page tiver display/padding/etc. em style.css,
+       mantenha aqui SÓ background-related.
+    */
+    body.cadastro-page {
+        background-color: rgba(240, 242, 245, 0.9);
+        /* Outras propriedades de background-image já estão ok */
+    }
+}
+
+
+/* ----------------------------------------- */
+/* Breakpoint: Telas até 480px (para Cadastro) */
+/* ----------------------------------------- */
+@media (max-width: 480px) {
+    /* Foto de Perfil na página de Cadastro */
+    .foto-perfil-preview img {
+        width: 80px; /* Reduz o tamanho da imagem de perfil */
+        height: 80px;
+    }
 }

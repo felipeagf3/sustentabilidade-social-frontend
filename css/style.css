@@ -377,3 +377,261 @@ background-color:#388e3c;
 .post-comments strong {
     color: #333;
 }
+
+
+/* ========================================= */
+/* style.css - MEDIA QUERIES GERAIS           */
+/* ========================================= */
+
+/* ----------------------------------------- */
+/* Ajuste Global para Imagens               */
+/* Garante que todas as imagens são responsivas */
+/* ----------------------------------------- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Para remover espaços indesejados abaixo de imagens em linha */
+}
+
+
+/* ----------------------------------------- */
+/* Breakpoint: Telas até 992px (Laptops Pequenos e Tablets Landscape) */
+/* Afeta principalmente layouts de duas colunas (feed, perfil) */
+/* ----------------------------------------- */
+@media (max-width: 992px) {
+    /* Container Principal (Feed) */
+    .container-principal {
+        flex-direction: column; /* Empilha a barra lateral e o conteúdo principal */
+        padding: 15px; /* Ajusta o padding geral do container */
+        margin-top: 80px; /* Ajuste para o cabeçalho fixo */
+    }
+
+    /* Barra Lateral Esquerda (compartilhada entre feed e perfil) */
+    .barra-lateral-esquerda {
+        width: 100%; /* Ocupa a largura total */
+        margin-bottom: 20px; /* Espaço abaixo da barra lateral */
+        flex: none; /* Remove flex-basis fixo */
+    }
+
+    /* Container Principal do Perfil */
+    .container-principal-perfil {
+        flex-direction: column; /* Empilha a barra lateral e o conteúdo principal */
+        padding: 15px;
+        margin-top: 80px; /* Ajuste para o cabeçalho fixo */
+    }
+
+    /* Conteúdo Principal (Feed e Perfil) */
+    .conteudo-principal,
+    .conteudo-principal-perfil {
+        width: 100%; /* Ocupa a largura total */
+    }
+}
+
+
+/* ----------------------------------------- */
+/* Breakpoint: Telas até 768px (Tablets e Celulares Grandes) */
+/* Afeta cabeçalhos e containers de formulário */
+/* ----------------------------------------- */
+@media (max-width: 768px) {
+    /* Cabeçalhos (compartilhados entre todas as páginas) */
+    .cabecalho,
+    .cabecalho-login,
+    .cabecalho-cadastro { /* Incluído para consistência se você usa cabecalho-cadastro ainda */
+        flex-wrap: wrap; /* Permite que itens quebrem linha */
+        justify-content: center; /* Centraliza itens quando quebram */
+        padding: 10px; /* Reduz padding */
+    }
+    .cabecalho h1,
+    .cabecalho-login h1,
+    .cabecalho-cadastro h1 {
+        font-size: 20px; /* Reduz o tamanho da fonte do título */
+        width: 100%; /* Ocupa a largura total para ficar centralizado */
+        text-align: center;
+        margin-bottom: 10px; /* Espaço abaixo do título */
+    }
+
+    /* Barra de pesquisa no cabeçalho */
+    .barra-pesquisa {
+        width: 100%; /* Ocupa largura total */
+        max-width: none; /* Remove limite de largura */
+        margin: 10px 0; /* Ajusta margens para centralização */
+        order: 3; /* Move a barra de pesquisa para baixo no cabeçalho flex */
+    }
+    .barra-pesquisa input {
+        width: calc(100% - 70px); /* Ajusta para caber o botão */
+        margin-right: 5px; /* Pequeno espaço */
+    }
+    .barra-pesquisa button {
+        width: auto; /* Deixa o botão se ajustar */
+        padding: 8px 12px;
+    }
+
+    /* Menu do cabeçalho */
+    .menu-cabecalho {
+        width: 100%; /* Ocupa a largura total */
+        justify-content: center; /* Centraliza os links */
+        order: 2; /* Move o menu para o meio (abaixo do título) */
+        margin-bottom: 10px;
+    }
+    .menu-cabecalho a {
+        margin: 0 8px; /* Espaçamento entre os links */
+        font-size: 0.9em;
+    }
+
+    /* Containers de formulário (login e cadastro) */
+    .login-container,
+    .cadastro-container { /* Compartilhado para ambos os formulários */
+        width: 90%;
+        margin-top: 80px; /* Ajuste o margin-top para o cabeçalho fixo reorganizado */
+        padding: 15px;
+    }
+
+    /* Seção de Informações do Perfil */
+    .secao-info-perfil {
+        flex-direction: column; /* Empilha avatar e info do usuário */
+        text-align: center; /* Centraliza o texto */
+        padding: 15px;
+    }
+    .avatar-container {
+        margin-right: 0; /* Remove margem lateral */
+        margin-bottom: 15px; /* Espaço abaixo do avatar */
+    }
+    .avatar-perfil {
+        width: 120px; /* Reduz tamanho do avatar */
+        height: 120px;
+    }
+    .nome-usuario-perfil {
+        font-size: 1.8em; /* Reduz tamanho da fonte */
+    }
+    .karma-perfil,
+    .data-cadastro {
+        font-size: 0.9em;
+    }
+
+    /* Menu de Perfil */
+    .menu-perfil ul {
+        flex-wrap: wrap; /* Permite que os itens do menu quebrem linha */
+        gap: 5px; /* Espaço entre os itens */
+    }
+    .menu-perfil li {
+        flex-basis: 48%; /* Duas colunas em telas menores */
+        margin-bottom: 5px; /* Espaço entre as linhas */
+    }
+    .menu-perfil a {
+        padding: 8px 10px; /* Reduz padding dos links do menu */
+        font-size: 0.9em;
+    }
+
+    /* Área de Publicação (Feed) */
+    .area-publicacao textarea {
+        min-height: 70px; /* Diminui a altura mínima do textarea */
+    }
+    .area-publicacao button {
+        font-size: 15px; /* Diminui o tamanho da fonte do botão de publicar */
+        padding: 9px 18px;
+    }
+
+    /* Posts (Feed e Perfil) */
+    .post {
+        padding: 15px; /* Reduz padding dos posts */
+    }
+}
+
+
+/* ----------------------------------------- */
+/* Breakpoint: Telas até 480px (Celulares Pequenos) */
+/* ----------------------------------------- */
+@media (max-width: 480px) {
+    /* Cabeçalhos (todas as páginas) */
+    .cabecalho h1,
+    .cabecalho-login h1,
+    .cabecalho-cadastro h1 {
+        font-size: 18px; /* Reduz ainda mais a fonte do título */
+        margin-bottom: 5px;
+    }
+
+    /* Containers de formulário (login e cadastro) */
+    .login-container,
+    .cadastro-container {
+        width: 95%;
+        padding: 10px;
+        margin-top: 70px;
+    }
+    .login-container h2,
+    .cadastro-container h2 {
+        font-size: 1.2em; /* Reduz fonte do h2 do formulário */
+    }
+    .login-container input,
+    .cadastro-container input,
+    .login-container button,
+    .cadastro-container button {
+        font-size: 0.9em; /* Reduz fonte dos inputs e botões */
+    }
+    .login-container .login-logo {
+        max-width: 100px; /* Reduz o tamanho da logo de login */
+    }
+
+    /* Seção de Informações do Perfil */
+    .secao-info-perfil {
+        padding: 10px;
+    }
+    .avatar-perfil {
+        width: 100px; /* Torna o avatar ainda menor */
+        height: 100px;
+    }
+    .nome-usuario-perfil {
+        font-size: 1.5em; /* Ajuste final da fonte do nome */
+    }
+
+    /* Menu de Perfil */
+    .menu-perfil ul {
+        flex-direction: column; /* Empilha os itens do menu em uma coluna */
+    }
+    .menu-perfil li {
+        flex-basis: auto; /* Volta para auto */
+        width: 100%; /* Ocupa largura total */
+    }
+    .menu-perfil a {
+        padding: 10px;
+    }
+
+    /* Redução de padding do container principal (Feed e Perfil) */
+    .container-principal,
+    .container-principal-perfil {
+        padding: 10px;
+    }
+
+    /* Área de Publicação (Feed) */
+    .area-publicacao textarea {
+        min-height: 60px; /* Diminui a altura mínima do textarea */
+    }
+    .area-publicacao button {
+        font-size: 14px; /* Diminui o tamanho da fonte do botão de publicar */
+        padding: 8px 15px;
+    }
+
+    /* Posts (Feed e Perfil) */
+    .post-title {
+        font-size: 1.2rem; /* Reduz fonte do título do post */
+    }
+    .post-header .avatar {
+        width: 30px; /* Avatares menores nos posts */
+        height: 30px;
+    }
+    .post-header .nome-usuario {
+        font-size: 0.9em;
+    }
+    .post-header .data-post {
+        font-size: 0.8em;
+    }
+    .post-content p {
+        font-size: 0.9em; /* Reduz fonte do conteúdo do post */
+    }
+    .post-actions button {
+        font-size: 13px; /* Reduz fonte dos botões de ação do post */
+        padding: 6px 10px;
+    }
+    .post-comments p {
+        font-size: 0.85em; /* Reduz fonte dos comentários */
+    }
+}
