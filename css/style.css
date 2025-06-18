@@ -13,6 +13,12 @@ body.login-page{
     margin: 0;
     padding-top: 48px;
     box-sizing: border-box;
+    /* Inicio das propriedades para a imagem de fundo */
+    background-image: url('../assets/images/fundo-login.jpg'); /* Altere 'fundo1.jpg' para o nome do seu arquivo */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo sem cortar ou repetir */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-attachment: fixed; /* Opcional: faz a imagem de fundo ficar fixa ao rolar */
 }
 
 /*estilo cabeçalho login*/
@@ -107,6 +113,17 @@ background-color:#388e3c;
 .login-container p a:hover{
     text-decoration: underline;
 }
+
+/* Estilo para a logo dentro do formulário de login */
+.login-container .login-logo {
+    max-width: 150px; /* Define a largura máxima da logo. Ajuste se necessário. */
+    height: auto; /* Mantém a proporção original da imagem. */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo da logo. */
+    display: block; /* Essencial para centralizar a imagem com 'margin: auto'. */
+    margin-left: auto; /* Centraliza a imagem horizontalmente. */
+    margin-right: auto; /* Centraliza a imagem horizontalmente. */
+}/*fim dos estilos da logo*/
+
 /*fim dos estilos tela de login*/
 
 /*cabeçalho da tela de feed*/
