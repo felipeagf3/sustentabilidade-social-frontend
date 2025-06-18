@@ -172,7 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fileInput.value = '';
       } else {
         const err = await response.json();
-        alert(`Erro ao publicar: ${err.message || response.statusText}`);
+        if(err.message === "Token não fornecido"){
+          alert(`Você não está logado!!! Cadastre-se gratuitamento ou logue em sua conta!`);
+          window.location.href = "/login.html";
+        } console.log(`Erro ao publicar: ${err.message || response.statusText}`);
       }
     } catch (error) {
       console.error("Erro de rede:", error);
