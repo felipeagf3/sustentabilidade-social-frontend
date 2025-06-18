@@ -14,10 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         article.classList.add('post');
         const button = null;
 
-        console.log(post.liked);
-
         let likedText = 'Curtir';
-        let likedStatus = 'like';
+        let likedStatus = '';
         let likedStyle = ''; // opcional, para mudar cor
 
         if (post.liked === 'like') {
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
           urlImageProfile = post.picture_profile_url;
         }
 
-        console.log(post.picture_profile_url)
 //fim da verificação da foto de perfil
         article.innerHTML = `
           <h3 class="post-title">${post.title}</h3>
@@ -78,10 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const postId = btn.getAttribute('data-id');
         const alreadyLiked = btn.getAttribute("data-liked");
 
+        console.log(alreadyLiked)
+
         try {
           let likes = parseInt(btn.innerText.match(/\d+/)[0]);
 
-          if (alreadyLiked === "unlike" || alreadyLiked !== undefined && alreadyLiked !== "") {
+          if (alreadyLiked === "unlike" && alreadyLiked !== undefined && alreadyLiked !== "") {
             // CURTIR
             const res = await fetch(`http://localhost:3000/${postId}/post/like`, {
               method: 'POST',
